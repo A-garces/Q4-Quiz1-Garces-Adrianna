@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Q4 Quiz 1</title>
+</head>
+<body>
+    
+<div class="container">
+
+    <img src="Fasting_6_600x600.webp" alt="BMI">
+
+    <h1>BMI Calculator</h1><hr>
+    <p><b>Body mass index (BMI)</b> is a measure of body fat based on height and weight that applies to adult men and women. Enter your weight and height using standard or metric measures.</p>
+    
+    <form>
+        <label for="measure_weight">Enter the value:</label>
+    <input type="text" id="w" placeholder="Enter Weight in Kg.">
+    <input type="text" id="h" placeholder="Enter Height in Meters.">
+    <button class="btn btn-primary" onclick="BMI()">Confirm</button>
+
+
+</div>
+
+    <p class="footer"> &copy; 2025 | ICT 9 | Q4 Quiz 1 | Made by Adrianna Garces </p>
+
+<script>
+    function BMI() {
+        var weight = document.getElementById("w");
+        var height = document.getElementById("h");
+
+        var w = Number(weight.value);
+        var h = Number(height.value);
+
+        var BMI = w / (h**2);
+        var rounded = BMI.toFixed(2);
+
+        if (BMI < 18.5) {
+            alert("Your BMI is " + rounded + ". You're underweight, let's improve our diet!");
+        }
+
+        else if (BMI >= 18.5 && BMI <=24.9) {
+            alert("Your BMI is " + rounded + ". You're average weight, let's maintain our diet!");
+        }
+
+        else if (BMI >= 25 && BMI <=29.9) {
+            alert("Your BMI is " + rounded + ". You're getting overweight, let's go on a diet!");
+        }
+
+        else if (BMI >= 30 && BMI <=35) {
+            alert("Your BMI is " + rounded + ". You're getting obese, let's improve our diet and work out!");
+        }
+
+        else if (BMI >= 36) {
+            alert("Your BMI is " + rounded + ". You're extremely obese, let's change our lifestyle, seek medicial advisory, and improve!");
+        }
+
+        }
+</script>
+
+</body>
+</html>
